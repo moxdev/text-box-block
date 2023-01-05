@@ -8,7 +8,12 @@
 	"icon": "text-page",
 	"description": "A box of text.",
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true
+		}
 	},
 	"textdomain": "text-box",
 	"editorScript": "file:./index.js",

@@ -1,9 +1,6 @@
 import {
 	AlignmentToolbar,
 	BlockControls,
-	ContrastChecker,
-	InspectorControls,
-	PanelColorSettings,
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
@@ -23,38 +20,8 @@ export default function Edit({ attributes, setAttributes }) {
 		setAttributes({ text: newText });
 	};
 
-	const onBackgroundColorChange = (newBgColor) => {
-		setAttributes({ backgroundColor: newBgColor });
-	};
-
-	const onTextColorChange = (newTextColor) => {
-		setAttributes({ textColor: newTextColor });
-	};
-
 	return (
 		<>
-			<InspectorControls>
-				<PanelColorSettings
-					title={__('Color Settings', 'text-box')}
-					colorSettings={[
-						{
-							value: backgroundColor,
-							onChange: onBackgroundColorChange,
-							label: __('Background Color', 'text-box'),
-						},
-						{
-							value: textColor,
-							onChange: onTextColorChange,
-							label: __('Text Color', 'text-box'),
-						},
-					]}
-				>
-					<ContrastChecker
-						textColor={textColor}
-						backgroundColor={backgroundColor}
-					/>
-				</PanelColorSettings>
-			</InspectorControls>
 			<BlockControls>
 				<AlignmentToolbar
 					value={alignment}
